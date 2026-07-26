@@ -1,4 +1,30 @@
 {
-    "name": "AciDCooL's Custom Plugins",
-    "description": "Custom Unmaniac plugins built by AciDCooL"
+    "repo": {
+        "id": "repository.acidcool",
+        "name": "AciDCooL's Custom Plugins",
+        "icon": "",
+        "repo_data_directory": "https://raw.githubusercontent.com/AciDCooL/unmaniac-plugins/main/",
+        "repo_data_url": "https://raw.githubusercontent.com/AciDCooL/unmaniac-plugins/main/repo.json"
+    },
+    "plugins": [
+        {
+            "author": "AciDCooL",
+            "compatibility": [
+                2
+            ],
+            "description": "Renames a stream's language tag from one ISO code to another (e.g., dut to nld) without transcoding.",
+            "icon": "https://raw.githubusercontent.com/Unmanic/plugin.encoder_audio_aac/master/icon.png",
+            "id": "rename_stream_language_tag",
+            "name": "Rename Stream Language Tag",
+            "platform": [
+                "all"
+            ],
+            "priorities": {
+                "on_library_management_file_test": 99,
+                "on_worker_process": 0
+            },
+            "tags": "metadata,audio,subtitle,language,rename",
+            "version": "0.0.1"
+        }
+    ]
 }
