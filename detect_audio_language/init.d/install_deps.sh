@@ -10,12 +10,12 @@ else
     python_command="/usr/bin/python3"
 fi
 
+tch=$("${python_command}" -m pip list | grep "^torch ")
+[[ ! $tch ]] && "$python_command" -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
 if ! command -v whisper &> /dev/null; then
     echo "**** Installing whisper ****"
     "$python_command" -m pip install -U openai-whisper
 else
     echo "**** whisper already installed ****"
 fi
-
-tch=$("${python_command}" -m pip list | grep "^torch ")
-[[ ! $tch ]] && "$python_command" -m pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
