@@ -162,7 +162,7 @@ def tag_streams(astreams, vid_file, settings):
         sfx = os.path.splitext(os.path.basename(vid_file))[1]
         temp_sfx = '.mkv'
         output_file = tmp_dir + '/' + str(os.path.splitext(os.path.basename(vid_file))[0]) + '.' + str(astream) + temp_sfx
-        command = ['ffmpeg', '-hide_banner', '-loglevel', 'info', '-i', str(vid_file), '-strict', '-2', '-max_muxing_queue_size', '9999', '-map', '0:v:0', '-map', '0:a:'+str(astream), '-map_metadata', '-1', '-c', 'copy', '-y', output_file]
+        command = [shutil.which('ffmpeg') or 'ffmpeg', '-hide_banner', '-loglevel', 'info', '-i', str(vid_file), '-strict', '-2', '-max_muxing_queue_size', '9999', '-map', '0:v:0', '-map', '0:a:'+str(astream), '-map_metadata', '-1', '-c', 'copy', '-y', output_file]
         logger.debug(f"tag_streams output_file: {output_file}")
         logger.debug(f"command: {command}")
 
@@ -170,14 +170,14 @@ def tag_streams(astreams, vid_file, settings):
             result = subprocess.run(command, shell=False, check=True, capture_output=True)
         except subprocess.CalledProcessError as e:
             reason = e.stderr.decode()
-            logger.error("Can not create output for audio stream '{}' of file '{}', so skipping stream".format(astream, vid_file))
+            logger.error(f"Can not create output for audio stream '{astream}' of file '{vid_file}', so skipping stream")
             continue
         except OSError as e:
             reason = e.stderr.decode()
             logger.error(f"OSError: {reason}, skipping stream")
             continue
         else:
-            logger.debug("temp video file to detect language in: '{}".format(output_file))
+            logger.debug(f"temp video file to detect language in: '{output_file}'")
 
         tag_style = settings.get_setting('tag_style')
         lang_tag = detect_language(output_file, tmp_dir, settings)
@@ -194,7 +194,7 @@ def tag_streams(astreams, vid_file, settings):
                 lang_tag = Language.get(standardize_tag(lang_tag)).to_alpha3()
             tag_args += ["-metadata:s:a:"+str(astream), 'language='+lang_tag]
         else:
-            logger.error("Language not successfully identified for audio stream '{}' of file '{}', so skipping stream".format(astream, vid_file))
+            logger.error(f"Language not successfully identified for audio stream '{astream}' of file '{vid_file}', so skipping stream")
 
     for f in glob.glob(tmp_dir + "/*.wav"):
         os.remove(f)
@@ -286,16 +286,13 @@ def detect_language(video_file, tmp_dir, settings):
         if not force_cpu:
             model.cpu()
         del model
-    except:
+    except Exception:
         pass
-        
-    import gc
-    gc.collect()
 
     if not force_cpu:
         try:
             torch.cuda.empty_cache()
-        except:
+        except Exception:
             pass
 
     # if processing as multilingual file, just return language with maximum number of detected ocurrences

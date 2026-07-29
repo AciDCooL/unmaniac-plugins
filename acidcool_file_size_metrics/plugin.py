@@ -6,7 +6,7 @@
     Date:                     2 December 2025, (7:09 PM)
 
     Copyright:
-        Copyright (C) 2025 Josh Sunnex
+        Copyright (C) 2025 Josh Sunnex, Patched by AciDCooL
 
         This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
         Public License as published by the Free Software Foundation, version 3.
@@ -105,7 +105,7 @@ class Settings(PluginSettings):
 
 settings = Settings()
 profile_directory = settings.get_profile_directory()
-db_file = os.path.abspath(os.path.join(profile_directory, "history.db"))
+db_file = os.path.abspath(os.path.join(profile_directory, "acidcool_history.db"))
 db = SqliteDatabase(
     db_file,
     pragmas=(
@@ -620,7 +620,7 @@ def save_destination_size(task_id, abspath, size, finish_time):
     return success
 
 
-def emit_task_scheduled(data, task_data_store: type[TaskDataStore] | None = None):
+def emit_task_scheduled(data, task_data_store=None):
     """
     Runner function - emit data when a task is scheduled for execution on a worker.
 
@@ -655,7 +655,7 @@ def emit_task_scheduled(data, task_data_store: type[TaskDataStore] | None = None
         task_data_store.set_runner_value("source_size", source_size)
 
 
-def on_postprocessor_task_results(data, task_data_store: type[TaskDataStore] | None = None):
+def on_postprocessor_task_results(data, task_data_store=None):
     """
     Runner function - provides a means for additional postprocessor functions based on the task success.
 

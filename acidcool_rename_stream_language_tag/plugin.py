@@ -4,14 +4,9 @@
 import logging
 from unmanic.libs.unplugins.settings import PluginSettings
 
-# We can import Probe and Parser if needed from unmanic core or lib
-try:
-    from unmanic.libs.system.ffmpeg import Probe, Parser
-except ImportError:
-    # Older Unmanic versions path fallback
-    from add_extra_stereo_audio.lib.ffmpeg import Probe, Parser
+from unmanic.libs.system.ffmpeg import Probe, Parser
 
-logger = logging.getLogger("Unmanic.Plugin.rename_stream_language_tag")
+logger = logging.getLogger("Unmanic.Plugin.acidcool_rename_stream_language_tag")
 
 class Settings(PluginSettings):
     settings = {
@@ -56,12 +51,20 @@ def on_library_management_file_test(data):
     # Since Probe import might vary, we can just use the provided data if available,
     # or instantiate Probe dynamically.
     probe_data = Probe(logger, allowed_mimetypes=['audio', 'video'])
-    if probe_data.file(abspath):
-        probe_streams = probe_data.get_probe()["streams"]
-    else:
+    if 'ffprobe' in data.get('shared_info', {}):
+        if not probe_data.set_probe(data.get('shared_info', {}).get('ffprobe')):
+            return data
+    elif not probe_data.file(abspath):
         logger.debug("Probe data failed - Blocking everything.")
         data['add_file_to_pending_tasks'] = False
         return data
+
+    probe_streams = probe_data.get_probe()["streams"]
+
+    # Set file probe to shared infor for subsequent file test runners
+    if 'shared_info' not in data:
+        data['shared_info'] = {}
+    data['shared_info']['ffprobe'] = probe_data.get_probe()
 
     if data.get('library_id'):
         settings = Settings(library_id=data.get('library_id'))
@@ -131,6 +134,6 @@ def on_worker_process(data):
             parser.set_probe(probe_data)
             data['command_progress_parser'] = parser.parse_progress
         except Exception as e:
-            logger.debug(f"Could not configure parser: {e}")
+            logger.error(f"Could not configure parser: {e}")
 
     return data
