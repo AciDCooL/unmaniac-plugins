@@ -1,3 +1,8 @@
+## [Patched Version]
+- Forked to AciDCooL
+- Renamed plugin ID to acidcool_file_size_metrics to ensure no conflicts
+- Removed Unmanic Central nags and hardcoded URLs
+
 
 **<span style="color:#56adda">0.2.3</span>**
 - Update runner signatures to accept keyword helper args for Unmanic compatibility

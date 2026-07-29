@@ -4,7 +4,7 @@
 """
     plugins.parser.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     12 Aug 2021, (9:00 AM)
 
     Copyright:

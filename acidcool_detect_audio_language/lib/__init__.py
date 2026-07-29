@@ -4,7 +4,7 @@
 """
     plugins.__init__.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     23 Aug 2021, (00:03 PM)
 
     Copyright:

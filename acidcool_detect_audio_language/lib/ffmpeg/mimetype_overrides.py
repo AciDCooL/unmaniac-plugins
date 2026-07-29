@@ -4,7 +4,7 @@
 """
     plugins.probe.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     17 Mar 2022, (9:29 AM)
 
     Copyright:

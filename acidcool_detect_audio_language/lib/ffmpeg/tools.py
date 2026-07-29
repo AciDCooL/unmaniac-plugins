@@ -4,7 +4,7 @@
 """
     plugins.tools.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     17 Feb 2023, (12:07 PM)
 
     Copyright:

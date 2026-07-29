@@ -1,5 +1,5 @@
 # Detect audio stream language and tag stream with results
-Plugin for [Unmanic](https://github.com/Unmanic)
+Patched independent plugin for Unmanic, maintained by [AciDCooL](https://github.com/AciDCooL/unmaniac-plugins)
 
 ---
 

@@ -4,7 +4,7 @@
 """
     unmanic.__init__.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     30 Jul 2021, (12:12 PM)
 
     Copyright:

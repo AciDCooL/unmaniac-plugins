@@ -1,3 +1,8 @@
+## [Patched Version]
+- Forked to AciDCooL
+- Renamed plugin ID to acidcool_detect_audio_language to ensure no conflicts
+- Removed legacy Unmanic Central nags and fixed URLs
+
 
 **<span style="color:#56adda">0.1.5</span>**
 - update init.d/install_whisper.sh to install newer version of torch compatible with other plugins using torch

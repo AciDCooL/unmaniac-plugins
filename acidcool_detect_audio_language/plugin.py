@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*-
 
 """
-    Written by:               yajrendrag <yajdude@gmail.com>
+    Written by:               AciDCooL (Forked from yajrendrag)
     Date:                     22 September 2024, (5:45 PM)
 
     Copyright:
-        Unmanic plugin code Copyright (C) 2024 Jay Gardner
+        Unmanic plugin code Copyright (C) 2024 Jay Gardner, Patched by AciDCooL
         Portions of this module rely on OpenAI's Whisper Speech Recognition which are governed by their license.
 
         This program is free software: you can redistribute it and/or modify it under the terms of the GNU General
@@ -47,7 +47,7 @@ from detect_audio_language.lib.ffmpeg import Probe, Parser
 from unmanic import config
 
 # Configure plugin logger
-logger = logging.getLogger("Unmanic.Plugin.detect_audio_language")
+logger = logging.getLogger("Unmanic.Plugin.acidcool_detect_audio_language")
 
 class Settings(PluginSettings):
     settings = {
@@ -150,7 +150,6 @@ def tag_streams(astreams, vid_file, settings):
 
     # create temporary work space in cache
     src_file_hash = hashlib.md5(os.path.basename(vid_file).encode('utf8')).hexdigest()
-    #tmp_dir = os.path.join('/tmp/unmanic/', '{}'.format(src_file_hash))
     tmp_dir = os.path.join(cache_path, '{}'.format(src_file_hash))
     dir=Path(tmp_dir)
     dir.mkdir(parents=True, exist_ok=True)
@@ -328,9 +327,6 @@ def on_worker_process(data):
         original_file_path      - The absolute path to the original file.
         repeat                  - Boolean, should this runner be executed again once completed with the same variables.
 
-    DEPRECIATED 'data' object args passed for legacy Unmanic versions:
-        exec_ffmpeg             - Boolean, should Unmanic run FFMPEG with the data returned from this plugin.
-        ffmpeg_args             - A list of Unmanic's default FFMPEG args.
 
     :param data:
     :return:

@@ -4,7 +4,7 @@
 """
     unmanic.stream_mapper.py
 
-    Written by:               Josh.5 <jsunnex@gmail.com>
+    Patched by:               AciDCooL (Forked from Josh.5)
     Date:                     30 Jul 2021, (9:41 AM)
 
     Copyright:

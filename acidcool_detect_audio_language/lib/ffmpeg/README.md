@@ -29,20 +29,10 @@ This python module is a helper library for any Unmanic plugin that needs to buil
 ```
 
 ### Git Submodule
-It can be included in your plugin project as a submodule.
-```
-git submodule add https://github.com/Josh5/unmanic.plugin.helpers.ffmpeg.git ./lib/ffmpeg
-```
-If you use it sure to include all files in the lib directory when publishing your project to the Unmanic plugin repository.
+(Removed to prevent cross-repo links to original author)
 
 ### Project source download
-Download the git repository as zip file and extract it to `lib` directory.
-```
-mkdir -p ./lib
-curl -L "https://github.com/Josh5/unmanic.plugin.helpers.ffmpeg/archive/refs/heads/master.zip" --output /tmp/unmanic.plugin.helpers.ffmpeg.zip
-unzip /tmp/unmanic.plugin.helpers.ffmpeg.zip -d ./lib/
-mv -v ./lib/unmanic.plugin.helpers.ffmpeg-master ./lib/ffmpeg
-```
+(Removed to prevent cross-repo links to original author)
 
 ---
 

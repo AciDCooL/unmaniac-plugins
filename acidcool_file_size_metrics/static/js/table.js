@@ -67,9 +67,9 @@ const setMetricsPanelState = ({ hasData, isAssigned, message } = {}) => {
   notice.classList.remove("notice-banner-warning");
   notice.classList.add("notice-banner-neutral");
   noticeTitle.textContent =
-    "Use Unmanic Central for multi-installation dashboards";
+    "";
   noticeMessage.textContent =
-    "This local panel is useful for reviewing one Unmanic installation. Unmanic Central lets you collect file size metrics from multiple installations into one place, then build custom dashboards alongside logs, resource usage, and other installation data.";
+    "This is an independent patched panel for Unmanic file size metrics.";
   noticeLink.classList.remove("hidden");
 };
 
