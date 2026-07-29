@@ -6,7 +6,7 @@
     ],
     "description": "Detect each audio stream language and tag stream with results",
     "icon": "https://raw.githubusercontent.com/yajrendrag/unmanic-plugins/master/source/detect_audio_language/icon.png",
-    "id": "detect_audio_language",
+    "id": "acidcool_detect_audio_language",
     "name": "Detect audio stream language (CPU Patched)",
     "platform": [
         "all"

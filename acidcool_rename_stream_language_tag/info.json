@@ -5,7 +5,7 @@
     ],
     "description": "Renames a stream's language tag from one ISO code to another (e.g., dut to nld) without transcoding.",
     "icon": "https://raw.githubusercontent.com/Unmanic/plugin.encoder_audio_aac/master/icon.png",
-    "id": "rename_stream_language_tag",
+    "id": "acidcool_rename_stream_language_tag",
     "name": "Rename Stream Language Tag",
     "platform": [
         "all"
