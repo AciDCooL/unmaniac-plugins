@@ -1,6 +1,12 @@
 #!/bin/bash
 
 # Script is executed by the Unmanic container on startup to auto-install dependencies
+
+# Clean up pip cache older than 90 days to prevent bloat
+if [ -d "/config/pip-cache" ]; then
+    find /config/pip-cache -type f -mtime +90 -delete 2>/dev/null || true
+fi
+
 TARGET_DIR="/opt/venv"
 if [[ -f "$TARGET_DIR/pyvenv.cfg" && -f "$TARGET_DIR/bin/python3" ]]; then
     # Venv case (Ubuntu 24 style or manual venv)
