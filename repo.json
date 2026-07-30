@@ -13,8 +13,8 @@
                 2
             ],
             "description": "Renames a stream's language tag from one ISO code to another (e.g., dut to nld) without transcoding.",
-            "icon": "https://raw.githubusercontent.com/Unmanic/plugin.encoder_audio_aac/master/icon.png",
-            "id": "rename_stream_language_tag",
+            "icon": "https://raw.githubusercontent.com/AciDCooL/unmaniac-plugins/main/acidcool_rename_stream_language_tag/icon.png",
+            "id": "acidcool_rename_stream_language_tag",
             "name": "Rename Stream Language Tag",
             "platform": [
                 "all"
@@ -33,8 +33,8 @@
                 2
             ],
             "description": "Aggregate changes in file size metrics for processed files and add a data panel for displaying the results. (Patched to remove Unmanic Central nag)",
-            "icon": "https://raw.githubusercontent.com/Unmanic/plugin.file_size_metrics/master/icon.png",
-            "id": "file_size_metrics",
+            "icon": "https://raw.githubusercontent.com/AciDCooL/unmaniac-plugins/main/acidcool_file_size_metrics/icon.png",
+            "id": "acidcool_file_size_metrics",
             "name": "File Size Metrics Data Panel (Patched)",
             "platform": [
                 "all"
@@ -52,8 +52,8 @@
                 2
             ],
             "description": "Detect each audio stream language and tag stream with results",
-            "icon": "https://raw.githubusercontent.com/yajrendrag/unmanic-plugins/master/source/detect_audio_language/icon.png",
-            "id": "detect_audio_language",
+            "icon": "https://raw.githubusercontent.com/AciDCooL/unmaniac-plugins/main/acidcool_detect_audio_language/icon.png",
+            "id": "acidcool_detect_audio_language",
             "name": "Detect audio stream language (CPU Patched)",
             "platform": [
                 "all"
