@@ -4,7 +4,7 @@
 import logging
 from unmanic.libs.unplugins.settings import PluginSettings
 
-from unmanic.libs.system.ffmpeg import Probe, Parser
+from acidcool_rename_stream_language_tag.lib.ffmpeg import Probe, Parser
 
 logger = logging.getLogger("Unmanic.Plugin.acidcool_rename_stream_language_tag")
 

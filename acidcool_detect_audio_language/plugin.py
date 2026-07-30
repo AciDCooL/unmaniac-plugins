@@ -42,7 +42,7 @@ from langcodes.tag_parser import LanguageTagError
 
 from unmanic.libs.unplugins.settings import PluginSettings
 
-from detect_audio_language.lib.ffmpeg import Probe, Parser
+from acidcool_detect_audio_language.lib.ffmpeg import Probe, Parser
 
 from unmanic import config
 
